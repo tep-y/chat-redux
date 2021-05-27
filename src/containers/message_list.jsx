@@ -4,8 +4,6 @@ import { connect } from 'react-redux';
 import Message from '../components/message';
 import { fetchMessages } from '../actions/index.js';
 
-
-
 class MessageList extends Component {
   componentWillMount() {
     this.props.fetchMessages();
@@ -20,8 +18,6 @@ class MessageList extends Component {
     );
   }
 }
-
-
 
 function mapStateToProps(state) {
   return {
