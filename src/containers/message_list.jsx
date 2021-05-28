@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 
 import { fetchMessages } from '../actions';
 import Message from '../components/message';
-// import MessageForm from '../containers/message_form';
+import MessageForm from '../containers/message_form';
 
 class MessageList extends Component {
   componentWillMount() {
@@ -19,7 +19,9 @@ class MessageList extends Component {
             return <Message key={message.author} message={message} />;
           })
         }
+        <MessageForm />
       </div>
+
     );
   }
 }
@@ -27,7 +29,7 @@ class MessageList extends Component {
 function mapStateToProps(state) {
   return {
     messages: state.messages,
-    // selectedChannel: state.selectedChannel
+    selectedChannel: state.selectedChannel
   };
 }
 
