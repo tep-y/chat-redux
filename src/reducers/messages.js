@@ -7,7 +7,7 @@ const messagesReducer = (state, action) => {
   switch (action.type) {
     // TODO return action.payload
     case FETCH_MESSAGES: {
-      return action.payload;
+      return action.payload.messages;
     }
     default:
       return state;

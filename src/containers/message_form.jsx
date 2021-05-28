@@ -7,9 +7,10 @@ import React, { Component } from 'react';
 class MessageForm extends Component {
   render() {
     return(
-      <input type="text" name="name" />
-      <button type="submit">Send</button>
-    );
+      <div></div>
+      // <input type="text" name="name" />
+      // <button type="submit">Send</button>
+    )
   }
 }
 

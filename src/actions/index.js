@@ -4,8 +4,7 @@ export const FETCH_MESSAGES = 'FETCH_MESSAGES';
 export function fetchMessages(channel) {
   const messageURL = `https://wagon-chat.herokuapp.com/${channel}/messages`;
   
-  const promise = fetch(messageURL)
-    .then(response => response.json());
+  const promise = fetch(messageURL).then(response => response.json());
 
   return {
     type: FETCH_MESSAGES,
