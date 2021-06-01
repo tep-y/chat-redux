@@ -2,6 +2,48 @@ body {
   font-family: Helvetica;
 }
 .app {
-  margin-top: 20px;
   margin-bottom: 20px;
+  display: grid;
+  grid-template-columns: 20% 80%;
+  width: 100vw;
 }
+
+// channels
+
+li {
+  color: red;
+  cursor: pointer;
+  list-style-type: none;
+}
+
+li.active {
+  color: black;
+  font-weight: boldl;
+  cursor: default;
+}
+
+.channel-list {
+  padding: 0 0 20px 20px;
+}
+
+// messages
+
+.message-content {
+  height: 100%;
+  margin-top: 20px;
+}
+
+.message-input {
+  padding: 18px 0 18px 0;
+
+  input[type=text] {
+   width: 50%;
+   margin-right: 20px;
+  }
+
+  button {
+    background-color: white;
+    border: black solid 1px;
+  }
+}
+

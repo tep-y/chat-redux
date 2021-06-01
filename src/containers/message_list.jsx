@@ -30,13 +30,18 @@ class MessageList extends Component {
 
   render () {
     return (
-      <div ref={(list) => {this.list = list}}>
-        {
-          this.props.messages.map((message) => {
-            return <Message key={message.id} message={message} />;
-          })
-        }
-        <MessageForm />
+      <div className="message-container">
+        <div className="message-title">
+          <h1>Channel: #{this.props.selectedChannel}</h1>
+        </div>
+        <div ref={(list) => {this.list = list}} className="message-content">
+          {
+            this.props.messages.map((message) => {
+              return <Message key={message.id} message={message} />;
+            })
+          }
+          <MessageForm />
+        </div>
       </div>
 
     );
