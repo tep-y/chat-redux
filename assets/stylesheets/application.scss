@@ -16,9 +16,15 @@ li {
   list-style-type: none;
 }
 
+li:hover {
+  color: #8a0900;
+  cursor: pointer;
+  list-style-type: none;
+}
+
 li.active {
   color: black;
-  font-weight: boldl;
+  font-weight: bold;
   cursor: default;
 }
 

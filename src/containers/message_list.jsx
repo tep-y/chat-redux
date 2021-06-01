@@ -7,17 +7,21 @@ import Message from '../components/message';
 import MessageForm from '../containers/message_form';
 
 class MessageList extends Component {
-  componentDidMount() {
+  componentWillMount() {
     this.fetchMessages();
-    this.refresh = setInterval(this.fetchMessages, 5000);
   }
 
-  componentWillUnmount() {
-    clearInterval(this.refresh);
-  }
+  // componentDidMount() {
+    
+  // }
 
   componentDidUpdate() {
     this.scrollToBottom();
+    this.refresh = setInterval(this.fetchMessages, 5000);
+  }
+  
+  componentWillUnmount() {
+    clearInterval(this.refresh);
   }
 
   fetchMessages = () => {
