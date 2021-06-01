@@ -7,11 +7,8 @@ import Message from '../components/message';
 import MessageForm from '../containers/message_form';
 
 class MessageList extends Component {
-  componentWillMount() {
-    this.fetchMessages();
-  }
-
   componentDidMount() {
+    this.fetchMessages();
     this.refresh = setInterval(this.fetchMessages, 5000);
   }
 
@@ -19,16 +16,24 @@ class MessageList extends Component {
     clearInterval(this.refresh);
   }
 
+  componentDidUpdate() {
+    this.scrollToBottom();
+  }
+
   fetchMessages = () => {
     this.props.fetchMessages(this.props.selectedChannel);
   }
   
+  scrollToBottom = () => {
+    this.list.scrollIntoView({behavior: "smooth", block: "end", inline: "nearest"});
+  }
+
   render () {
     return (
-      <div>
+      <div ref={(list) => {this.list = list}}>
         {
           this.props.messages.map((message) => {
-            return <Message key={message.author} message={message} />;
+            return <Message key={message.id} message={message} />;
           })
         }
         <MessageForm />
